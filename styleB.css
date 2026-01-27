@@ -1,0 +1,56 @@
+/* styleB.css - fixed version that matches your exact HTML structure */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Tahoma, sans-serif;
+    min-height: 200vh;          /* allows scrolling to test fixed positioning */
+}
+
+/* The container holds all boxes → we make the first 5 behave as horizontal fixed line */
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    white-space: nowrap;        /* prevents wrapping when window is narrow */
+    padding: 10px;
+}
+
+/* Common styles for every .box (A through F) */
+.box {
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: #eeeeff;
+    border: 1px dotted #D0DDFF;
+    text-align: center;
+    padding: 10px;              /* 10px space between letters and box edges */
+    font-family: Tahoma, sans-serif;
+    transition: all 0.2s ease;
+}
+
+/* Boxes A–E: larger size + spacing between them */
+.container .box:not(:last-child) {
+    width: 150px;
+    height: 150px;
+    margin-right: 10px;         /* 10px gap between A,B,C,D,E */
+    line-height: 130px;         /* rough vertical centering for single letter */
+}
+
+/* Box F: smaller size, positioned bottom-right independently */
+.container .box:last-child {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 100px;
+    height: 100px;
+    line-height: 80px;          /* rough vertical centering */
+    margin: 0;                  /* override any inherited margin */
+}
+
+/* Hover effect for all boxes */
+.box:hover {
+    cursor: pointer;
+    background-color: yellow;
+    color: goldenrod;
+}
