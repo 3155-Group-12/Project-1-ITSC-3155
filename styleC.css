@@ -1,0 +1,12 @@
+body {
+    background: linear-gradient(90deg, red 50%, orange 100%);
+}
+
+.box {
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.box:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
